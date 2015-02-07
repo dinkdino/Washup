@@ -30,11 +30,18 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto Condensed 300.ttf</string>
+		<string>Roboto Condensed 300italic.ttf</string>
+		<string>Roboto Condensed 700.ttf</string>
+		<string>Roboto Condensed 700italic.ttf</string>
+		<string>Roboto Condensed italic.ttf</string>
+		<string>Roboto Condensed regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

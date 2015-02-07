@@ -19,12 +19,19 @@
 		312C815D1A86546E006AD77E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312C815C1A86546E006AD77E /* SystemConfiguration.framework */; };
 		312C81601A865491006AD77E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 312C815E1A865491006AD77E /* libsqlite3.dylib */; };
 		312C81611A865491006AD77E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 312C815F1A865491006AD77E /* libz.dylib */; };
+		317B73BF1A867DDB004FF571 /* Roboto Condensed 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73B91A867DDB004FF571 /* Roboto Condensed 300.ttf */; };
+		317B73C01A867DDB004FF571 /* Roboto Condensed 300italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73BA1A867DDB004FF571 /* Roboto Condensed 300italic.ttf */; };
+		317B73C11A867DDB004FF571 /* Roboto Condensed 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73BB1A867DDB004FF571 /* Roboto Condensed 700.ttf */; };
+		317B73C21A867DDB004FF571 /* Roboto Condensed 700italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73BC1A867DDB004FF571 /* Roboto Condensed 700italic.ttf */; };
+		317B73C31A867DDB004FF571 /* Roboto Condensed italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73BD1A867DDB004FF571 /* Roboto Condensed italic.ttf */; };
+		317B73C41A867DDB004FF571 /* Roboto Condensed regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317B73BE1A867DDB004FF571 /* Roboto Condensed regular.ttf */; };
 		31BC261B1A8517B30026160A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC261A1A8517B30026160A /* AppDelegate.swift */; };
-		31BC261D1A8517B30026160A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC261C1A8517B30026160A /* ViewController.swift */; };
+		31BC261D1A8517B30026160A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC261C1A8517B30026160A /* LoginViewController.swift */; };
 		31BC26201A8517B30026160A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BC261E1A8517B30026160A /* Main.storyboard */; };
 		31BC26221A8517B30026160A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BC26211A8517B30026160A /* Images.xcassets */; };
 		31BC26251A8517B30026160A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BC26231A8517B30026160A /* LaunchScreen.xib */; };
 		31BC26311A8517B30026160A /* WashupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC26301A8517B30026160A /* WashupTests.swift */; };
+		31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,16 +58,23 @@
 		312C815E1A865491006AD77E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		312C815F1A865491006AD77E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		312C81621A86553C006AD77E /* Washup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Washup-Bridging-Header.h"; sourceTree = "<group>"; };
+		317B73B91A867DDB004FF571 /* Roboto Condensed 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed 300.ttf"; sourceTree = "<group>"; };
+		317B73BA1A867DDB004FF571 /* Roboto Condensed 300italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed 300italic.ttf"; sourceTree = "<group>"; };
+		317B73BB1A867DDB004FF571 /* Roboto Condensed 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed 700.ttf"; sourceTree = "<group>"; };
+		317B73BC1A867DDB004FF571 /* Roboto Condensed 700italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed 700italic.ttf"; sourceTree = "<group>"; };
+		317B73BD1A867DDB004FF571 /* Roboto Condensed italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed italic.ttf"; sourceTree = "<group>"; };
+		317B73BE1A867DDB004FF571 /* Roboto Condensed regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed regular.ttf"; sourceTree = "<group>"; };
 		31BC26151A8517B30026160A /* Washup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Washup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BC26191A8517B30026160A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31BC261A1A8517B30026160A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31BC261C1A8517B30026160A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31BC261C1A8517B30026160A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		31BC261F1A8517B30026160A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31BC26211A8517B30026160A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		31BC26241A8517B30026160A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		31BC262A1A8517B30026160A /* WashupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WashupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BC262F1A8517B30026160A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31BC26301A8517B30026160A /* WashupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashupTests.swift; sourceTree = "<group>"; };
+		31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +127,33 @@
 			path = Washup;
 			sourceTree = "<group>";
 		};
+		317B73B71A867D6D004FF571 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				317B73B81A867D7A004FF571 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		317B73B81A867D7A004FF571 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				317B73B91A867DDB004FF571 /* Roboto Condensed 300.ttf */,
+				317B73BA1A867DDB004FF571 /* Roboto Condensed 300italic.ttf */,
+				317B73BB1A867DDB004FF571 /* Roboto Condensed 700.ttf */,
+				317B73BC1A867DDB004FF571 /* Roboto Condensed 700italic.ttf */,
+				317B73BD1A867DDB004FF571 /* Roboto Condensed italic.ttf */,
+				317B73BE1A867DDB004FF571 /* Roboto Condensed regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		31BC260C1A8517B30026160A = {
 			isa = PBXGroup;
 			children = (
 				31BC26171A8517B30026160A /* Washup */,
 				312C81491A8653DC006AD77E /* Frameworks */,
+				317B73B71A867D6D004FF571 /* Resources */,
 				31BC262D1A8517B30026160A /* WashupTests */,
 				31BC26161A8517B30026160A /* Products */,
 			);
@@ -136,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				31BC261A1A8517B30026160A /* AppDelegate.swift */,
-				31BC261C1A8517B30026160A /* ViewController.swift */,
+				31F3A43C1A86882100BFB0C8 /* ViewControllers */,
 				31BC261E1A8517B30026160A /* Main.storyboard */,
 				31BC26211A8517B30026160A /* Images.xcassets */,
 				31BC26231A8517B30026160A /* LaunchScreen.xib */,
@@ -169,6 +205,15 @@
 				31BC262F1A8517B30026160A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31F3A43C1A86882100BFB0C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				31BC261C1A8517B30026160A /* LoginViewController.swift */,
+				31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +298,13 @@
 			files = (
 				31BC26201A8517B30026160A /* Main.storyboard in Resources */,
 				31BC26251A8517B30026160A /* LaunchScreen.xib in Resources */,
+				317B73C41A867DDB004FF571 /* Roboto Condensed regular.ttf in Resources */,
+				317B73C01A867DDB004FF571 /* Roboto Condensed 300italic.ttf in Resources */,
 				31BC26221A8517B30026160A /* Images.xcassets in Resources */,
+				317B73BF1A867DDB004FF571 /* Roboto Condensed 300.ttf in Resources */,
+				317B73C31A867DDB004FF571 /* Roboto Condensed italic.ttf in Resources */,
+				317B73C21A867DDB004FF571 /* Roboto Condensed 700italic.ttf in Resources */,
+				317B73C11A867DDB004FF571 /* Roboto Condensed 700.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31BC261D1A8517B30026160A /* ViewController.swift in Sources */,
+				31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */,
+				31BC261D1A8517B30026160A /* LoginViewController.swift in Sources */,
 				31BC261B1A8517B30026160A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,12 +447,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Washup",
 				);
 				INFOPLIST_FILE = Washup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Washup/Washup-Bridging-Header.h";
@@ -412,12 +466,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Washup",
 				);
 				INFOPLIST_FILE = Washup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Washup/Washup-Bridging-Header.h";

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A3A52403-5E4F-406A-8EC9-A029DAB9BC9D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Washup</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>004900D27AE8A8B79539542FA6D48A0D5D347D4E</key>
+		<string>https://github.com/dinkdino/Washup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Washup.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>004900D27AE8A8B79539542FA6D48A0D5D347D4E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dinkdino/Washup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>004900D27AE8A8B79539542FA6D48A0D5D347D4E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>004900D27AE8A8B79539542FA6D48A0D5D347D4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Washup</string>
+		</dict>
+	</array>
+</dict>
+</plist>

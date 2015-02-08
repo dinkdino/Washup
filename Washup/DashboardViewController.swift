@@ -12,18 +12,9 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var sidebarButton: UIBarButtonItem!
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController!.navigationBarHidden = true
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController!.navigationBarHidden = false
-        super.viewWillDisappear(animated)
-    }
-    
     override func viewDidLoad() {
         
+        self.navigationController!.navigationBarHidden = true
         self.setupViews()
     }
     

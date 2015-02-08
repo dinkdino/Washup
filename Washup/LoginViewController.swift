@@ -29,6 +29,15 @@ class LoginViewController: UIViewController {
         
         // Design Changes
         self.setupViews()
+        
+        var fontFamilies = UIFont.familyNames()
+            
+        for (var i:Int = 0; i < fontFamilies.count; i++) {
+            var fontFamily: NSString = fontFamilies[i] as NSString
+            var fontNames: NSArray = UIFont.fontNamesForFamilyName(fontFamilies[i] as String) as NSArray
+            
+            NSLog ("%@: %@", fontFamily, fontNames)
+        }
     }
     
     func setupViews() {

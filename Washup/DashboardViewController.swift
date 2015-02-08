@@ -10,6 +10,8 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
+    @IBOutlet weak var sidebarButton: UIBarButtonItem!
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController!.navigationBarHidden = true
         super.viewWillAppear(animated)
@@ -23,11 +25,15 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         
         self.setupViews()
-        
     }
     
     func setupViews() {
         
+        
+        
     }
 
+    @IBAction func sidebarButtonTapped(sender: UIBarButtonItem) {
+        revealViewController().revealToggleAnimated(true)
+    }
 }

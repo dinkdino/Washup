@@ -24,6 +24,8 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     
+    var delegate: RegisterViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,13 +62,13 @@ class RegisterViewController: UIViewController {
         user.signUpInBackgroundWithBlock { (succeded: Bool!, error: NSError!) -> Void in
             
             if error == nil {
-                // Signed up and logged in successfully
-                self.performSegueWithIdentifier("registerSegue", sender: self)
+                self.dismissViewControllerAnimated(false, completion: nil)
+                self.delegate?.registeredSuccessfully()
             } else {
                 
                 if let userInfo = error.userInfo {
                     let errorString = userInfo["error"] as String
-                    println(errorString)
+                    self.showValidationErrorMessage("Could not create new account. Try Again.")
                 }
             }
         }
@@ -138,5 +140,9 @@ extension RegisterViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+protocol RegisterViewControllerDelegate {
+    func registeredSuccessfully()
 }
 

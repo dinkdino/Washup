@@ -14,10 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
     @IBOutlet weak var formWrapper: UIView!
+    
+    @IBOutlet weak var validationMessageWrapperView: UIView!
+    @IBOutlet weak var validationMessageLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,7 @@ class LoginViewController: UIViewController {
     func setupViews() {
         
         // Corder radius for buttons
-        self.submitButton.layer.cornerRadius = 2.0
+        self.loginButton.layer.cornerRadius = 2.0
         self.registerButton.layer.cornerRadius = 2.0
     }
 
@@ -61,6 +65,73 @@ class LoginViewController: UIViewController {
         })
     }
     
+    @IBAction func loginButtonTapped(sender: UIButton) {
+        
+        if !self.validateForm() {
+            return
+        }
+        
+        PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) { (user: PFUser!, error: NSError!) -> Void in
+            
+            if user != nil {
+                self.showDashboard()
+            } else {
+                if let userInfo = error.userInfo {
+                    let errorString = userInfo["error"] as String
+                    self.showValidationErrorMessage("Incorrect email or password")
+                }
+            }
+        }
+    }
+    
+    func validateForm() -> Bool {
+        
+        // Email
+        if self.usernameTextField.text.isEmpty {
+            showValidationErrorMessage("Please enter a email address")
+            return false
+        }
+        
+        if !self.usernameTextField.text.isEmailValid() {
+            showValidationErrorMessage("Please enter a valid email address")
+            return false
+        }
+        
+        // Password
+        if self.passwordTextField.text.isEmpty {
+            showValidationErrorMessage("Please enter a password")
+            return false
+        }
+        
+        // --- Form is Valid
+        self.validationMessageWrapperView.hidden = true
+        
+        return true
+    }
+    
+    func showValidationErrorMessage(message: String) {
+        
+        if !message.isEmpty {
+            self.validationMessageLabel.text = message
+            self.validationMessageWrapperView.hidden = false
+        }
+    }
+    
+    func showDashboard() {
+        self.performSegueWithIdentifier("loginSegue", sender: self)
+    }
+    
+    @IBAction func registerButtonTapped(sender: UIButton) {
+        self.performSegueWithIdentifier("registerSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "registerSegue" {
+            let destinationVc = segue.destinationViewController as RegisterViewController
+            destinationVc.delegate = self
+        }
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -70,5 +141,12 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+extension LoginViewController: RegisterViewControllerDelegate {
+    
+    func registeredSuccessfully() {
+        self.showDashboard()
+    }
 }
 

@@ -12,6 +12,8 @@ class PickupViewController: UIViewController {
     
     @IBOutlet weak var bgView: UIView!
     
+    @IBOutlet weak var dateLabel: UITextField!
+    
     override func viewDidLoad() {
         
         self.setupViews()
@@ -29,4 +31,10 @@ class PickupViewController: UIViewController {
         self.bgView.layer.addSublayer(gradient)
     }
 
+    @IBAction func dateValueChanged(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, dd MMM YYYY"
+        let dateString = dateFormatter.stringFromDate(sender.date)
+        self.dateLabel.text = dateString
+    }
 }

@@ -34,6 +34,7 @@
 		31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */; };
 		31F3A43E1A86936200BFB0C8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */; };
 		31F3A4401A86982800BFB0C8 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */; };
+		31F72B361A87210B00967B50 /* FormValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F72B351A87210B00967B50 /* FormValidators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
+		31F72B351A87210B00967B50 /* FormValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				31BC261A1A8517B30026160A /* AppDelegate.swift */,
 				31F3A43C1A86882100BFB0C8 /* ViewControllers */,
+				31F72B341A8720E200967B50 /* Utilities */,
 				31BC261E1A8517B30026160A /* Main.storyboard */,
 				31BC26211A8517B30026160A /* Images.xcassets */,
 				31BC26231A8517B30026160A /* LaunchScreen.xib */,
@@ -220,6 +223,14 @@
 				31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		31F72B341A8720E200967B50 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				31F72B351A87210B00967B50 /* FormValidators.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */,
 				31BC261D1A8517B30026160A /* LoginViewController.swift in Sources */,
 				31BC261B1A8517B30026160A /* AppDelegate.swift in Sources */,
+				31F72B361A87210B00967B50 /* FormValidators.swift in Sources */,
 				31F3A43E1A86936200BFB0C8 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

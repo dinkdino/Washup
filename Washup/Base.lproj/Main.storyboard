@@ -19,6 +19,9 @@
             <string>RobotoCondensed-Italic</string>
             <string>RobotoCondensed-Italic</string>
         </mutableArray>
+        <mutableArray key="Roboto Condensed regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -146,7 +149,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="QdR-5q-jVG" kind="presentation" modalTransitionStyle="flipHorizontal" id="A4Y-c5-j92"/>
+                                                    <segue destination="QdR-5q-jVG" kind="presentation" modalTransitionStyle="flipHorizontal" id="bug-um-ilX"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -530,6 +533,9 @@
                                                     <color key="titleColor" red="0.99990183119999998" green="1" blue="0.99987989659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="QdR-5q-jVG" eventType="touchUpInside" id="aHS-mt-jRw"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-55-ax0" userLabel="passwordWrapper">
                                                 <rect key="frame" x="0.0" y="220" width="289" height="47"/>
@@ -608,6 +614,25 @@
                                     <constraint firstItem="QuF-VY-EDH" firstAttribute="top" secondItem="3EK-W8-jOK" secondAttribute="bottom" constant="29" id="tKj-KN-EAM"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgN-s3-yDS" userLabel="validationMessageWrapper">
+                                <rect key="frame" x="0.0" y="44" width="375" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZz-2p-k6A">
+                                        <rect key="frame" x="8" y="4" width="359" height="21"/>
+                                        <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="15"/>
+                                        <color key="textColor" red="0.99357479810714722" green="0.99771422147750854" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.47600752115249634" blue="0.35271954536437988" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uZz-2p-k6A" secondAttribute="trailing" constant="8" id="99j-MY-llM"/>
+                                    <constraint firstAttribute="height" constant="30" id="F06-MA-20w"/>
+                                    <constraint firstItem="uZz-2p-k6A" firstAttribute="top" secondItem="XgN-s3-yDS" secondAttribute="top" constant="4" id="HF2-ex-7Ov"/>
+                                    <constraint firstAttribute="bottom" secondItem="uZz-2p-k6A" secondAttribute="bottom" constant="5" id="JfA-Os-9bc"/>
+                                    <constraint firstItem="uZz-2p-k6A" firstAttribute="leading" secondItem="XgN-s3-yDS" secondAttribute="leading" constant="8" id="nYF-Dt-FS7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -617,10 +642,13 @@
                             <constraint firstAttribute="trailing" secondItem="5AV-gr-mI2" secondAttribute="trailing" id="KaC-PF-eXc"/>
                             <constraint firstItem="5AV-gr-mI2" firstAttribute="leading" secondItem="mg6-7L-ioo" secondAttribute="leading" id="Q9k-Pm-eKV"/>
                             <constraint firstItem="aKf-gS-IGb" firstAttribute="leading" secondItem="mg6-7L-ioo" secondAttribute="leading" id="afJ-FV-jyZ"/>
+                            <constraint firstItem="XgN-s3-yDS" firstAttribute="top" secondItem="5AV-gr-mI2" secondAttribute="bottom" id="caS-8E-tJY"/>
+                            <constraint firstAttribute="trailing" secondItem="XgN-s3-yDS" secondAttribute="trailing" id="ccF-yb-GWL"/>
                             <constraint firstItem="Nol-b4-5qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AsX-PR-eaP" secondAttribute="bottom" id="cyT-AB-WMS"/>
                             <constraint firstItem="5AV-gr-mI2" firstAttribute="top" secondItem="mg6-7L-ioo" secondAttribute="top" id="fkK-Bg-jad"/>
                             <constraint firstAttribute="centerX" secondItem="AsX-PR-eaP" secondAttribute="centerX" id="hwb-SS-CyW"/>
                             <constraint firstItem="Nol-b4-5qu" firstAttribute="top" secondItem="aKf-gS-IGb" secondAttribute="bottom" id="qui-0P-rgD"/>
+                            <constraint firstItem="XgN-s3-yDS" firstAttribute="leading" secondItem="mg6-7L-ioo" secondAttribute="leading" id="y6J-N6-ila"/>
                             <constraint firstAttribute="trailing" secondItem="aKf-gS-IGb" secondAttribute="trailing" id="yd8-VI-ydq"/>
                         </constraints>
                     </view>
@@ -631,12 +659,20 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="emailTextField" destination="d9k-8V-KiS" id="gkw-ht-Y6w"/>
+                        <outlet property="firstNameTextField" destination="xEl-m9-2W2" id="oyw-qn-Qm9"/>
+                        <outlet property="lastNameTextField" destination="5OV-W1-zQ3" id="X41-xr-jX5"/>
+                        <outlet property="mobileNumberTextField" destination="Zr6-Rb-2dH" id="473-zS-dwk"/>
+                        <outlet property="passwordTextField" destination="NtU-k3-oL1" id="SYr-sH-C3E"/>
                         <outlet property="submitButton" destination="aM2-XT-7aZ" id="sjq-QZ-A8L"/>
+                        <outlet property="validationMessageLabel" destination="uZz-2p-k6A" id="s9W-nd-Ia2"/>
+                        <outlet property="validationMessageWrapperView" destination="XgN-s3-yDS" id="v1y-ca-QdD"/>
+                        <segue destination="suJ-MQ-bbs" kind="presentation" identifier="registerSegue" modalTransitionStyle="flipHorizontal" id="Zqz-WG-pfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40M-ci-b08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974.0625" y="1358.9788732394366"/>
+            <point key="canvasLocation" x="973.5" y="1358.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ttR-y2-pqz">
@@ -674,4 +710,7 @@
         <image name="userIcon" width="47" height="47"/>
         <image name="waterBackground" width="320" height="569"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zqz-WG-pfL"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -32,6 +32,8 @@
 		31BC26251A8517B30026160A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BC26231A8517B30026160A /* LaunchScreen.xib */; };
 		31BC26311A8517B30026160A /* WashupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC26301A8517B30026160A /* WashupTests.swift */; };
 		31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */; };
+		31F3A43E1A86936200BFB0C8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */; };
+		31F3A4401A86982800BFB0C8 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		31BC262F1A8517B30026160A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31BC26301A8517B30026160A /* WashupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashupTests.swift; sourceTree = "<group>"; };
 		31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,8 @@
 			children = (
 				31BC261C1A8517B30026160A /* LoginViewController.swift */,
 				31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */,
+				31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */,
+				31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -322,9 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F3A4401A86982800BFB0C8 /* PickupViewController.swift in Sources */,
 				31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */,
 				31BC261D1A8517B30026160A /* LoginViewController.swift in Sources */,
 				31BC261B1A8517B30026160A /* AppDelegate.swift in Sources */,
+				31F3A43E1A86936200BFB0C8 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

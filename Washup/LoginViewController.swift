@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewWrapperTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Reset logo position
-        self.logoTopConstraint.constant = 158
+        self.scrollViewWrapperTopConstraint.constant = 158
         
         // Hide formwrapper view
         self.formWrapper.alpha = 0.0
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         
         
         // Animate logo upwards
-        self.logoTopConstraint.constant -= 100
+        self.scrollViewWrapperTopConstraint.constant -= 100
         self.view.setNeedsUpdateConstraints()
         
         UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in

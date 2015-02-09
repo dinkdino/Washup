@@ -10,10 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var scrollViewWrapperTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var validationMessageWrapperView: UIView!
     @IBOutlet weak var validationMessageLabel: UILabel!
     
+    var activeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +32,6 @@ class LoginViewController: UIViewController {
         // Design Changes
         self.setupViews()
         
-        var fontFamilies = UIFont.familyNames()
-            
-        for (var i:Int = 0; i < fontFamilies.count; i++) {
-            var fontFamily: NSString = fontFamilies[i] as NSString
-            var fontNames: NSArray = UIFont.fontNamesForFamilyName(fontFamilies[i] as String) as NSArray
-            
-            NSLog ("%@: %@", fontFamily, fontNames)
-        }
     }
     
     func setupViews() {
@@ -50,11 +44,19 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.registerKeyboardNotifications()
+        
         // Reset logo position
-        self.scrollViewWrapperTopConstraint.constant = 158
+        self.scrollViewTopConstraint.constant = 152
         
         // Hide formwrapper view
         self.formWrapper.alpha = 0.0
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.deregisterKeyboardNotifications()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -62,10 +64,10 @@ class LoginViewController: UIViewController {
         
         
         // Animate logo upwards
-        self.scrollViewWrapperTopConstraint.constant -= 100
+        self.scrollViewTopConstraint.constant -= 100
         self.view.setNeedsUpdateConstraints()
         
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animateWithDuration(1.0, delay: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.view.layoutIfNeeded()
             }, completion: { finished in
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
@@ -150,6 +152,49 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.activeTextField = nil
+    }
+    
+    func registerKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func deregisterKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification:NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            
+            if let textField = self.activeTextField {
+                let frame = textField.convertRect(textField.frame, toView: nil)
+                let origin = frame.origin
+                let height = textField.frame.size.height
+                
+                var visibleRect = self.view.frame
+                visibleRect.size.height -= keyboardSize.height
+                
+                if !CGRectContainsPoint(visibleRect, origin) {
+                    let scrollToPoint = CGPoint(x: 0.0, y: origin.y - visibleRect.size.height + height)
+                    scrollView.setContentOffset(scrollToPoint, animated: true)
+                }
+                
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        scrollView.setContentOffset(CGPointZero, animated: true)
+    }
 }
 
 extension LoginViewController: RegisterViewControllerDelegate {

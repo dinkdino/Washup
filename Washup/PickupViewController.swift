@@ -12,14 +12,30 @@ class PickupViewController: UIViewController {
     
     @IBOutlet weak var bgView: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var activeTextField: UITextField!
     
     var selectedDate: NSDate?
     var selectedTime: NSDate?
     
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var serviceSegmentedControl: UISegmentedControl!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.deregisterKeyboardNotifications()
+    }
     
     override func viewDidLoad() {
         
@@ -96,5 +112,57 @@ class PickupViewController: UIViewController {
         }, origin: self.view)
 
         datePicker.showActionSheetPicker()
+    }
+}
+
+extension PickupViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.activeTextField = nil
+    }
+    
+    func registerKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func deregisterKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification:NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            
+            if let textField = self.activeTextField {
+                let frame = textField.convertRect(textField.frame, toView: nil)
+                let origin = frame.origin
+                let height = textField.frame.size.height
+                
+                var visibleRect = self.view.frame
+                visibleRect.size.height -= keyboardSize.height
+                
+                if !CGRectContainsPoint(visibleRect, origin) {
+                    let scrollToPoint = CGPoint(x: 0.0, y: origin.y - visibleRect.size.height + height)
+                    scrollView.setContentOffset(scrollToPoint, animated: true)
+                }
+                
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        scrollView.setContentOffset(CGPointZero, animated: true)
     }
 }

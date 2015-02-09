@@ -34,6 +34,8 @@
 		31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */; };
 		31F3A43E1A86936200BFB0C8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */; };
 		31F3A4401A86982800BFB0C8 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */; };
+		31F682661A891F3F007580E2 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F682651A891F3F007580E2 /* ServicesViewController.swift */; };
+		31F682681A8920A7007580E2 /* StoreLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F682671A8920A7007580E2 /* StoreLocatorViewController.swift */; };
 		31F72B361A87210B00967B50 /* FormValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F72B351A87210B00967B50 /* FormValidators.swift */; };
 		31F72B381A872E9000967B50 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F72B371A872E9000967B50 /* Social.framework */; };
 		31F72B3A1A872ED400967B50 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F72B391A872ED400967B50 /* Accounts.framework */; };
@@ -84,6 +86,8 @@
 		31F3A43A1A86881600BFB0C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
+		31F682651A891F3F007580E2 /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		31F682671A8920A7007580E2 /* StoreLocatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreLocatorViewController.swift; sourceTree = "<group>"; };
 		31F72B351A87210B00967B50 /* FormValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidators.swift; sourceTree = "<group>"; };
 		31F72B371A872E9000967B50 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		31F72B391A872ED400967B50 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -239,6 +243,8 @@
 				31F3A43D1A86936200BFB0C8 /* DashboardViewController.swift */,
 				31F3A43F1A86982800BFB0C8 /* PickupViewController.swift */,
 				31F7F1461A874621002DD960 /* SidebarTableViewController.swift */,
+				31F682651A891F3F007580E2 /* ServicesViewController.swift */,
+				31F682671A8920A7007580E2 /* StoreLocatorViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				TargetAttributes = {
 					31BC26141A8517B30026160A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3MPM58FZRX;
 					};
 					31BC26291A8517B30026160A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -403,6 +410,8 @@
 			files = (
 				31F3A4401A86982800BFB0C8 /* PickupViewController.swift in Sources */,
 				31F7F1471A874621002DD960 /* SidebarTableViewController.swift in Sources */,
+				31F682661A891F3F007580E2 /* ServicesViewController.swift in Sources */,
+				31F682681A8920A7007580E2 /* StoreLocatorViewController.swift in Sources */,
 				31F3A43B1A86881600BFB0C8 /* RegisterViewController.swift in Sources */,
 				31BC261D1A8517B30026160A /* LoginViewController.swift in Sources */,
 				31BC261B1A8517B30026160A /* AppDelegate.swift in Sources */,
@@ -533,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Washup",
@@ -553,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Washup",

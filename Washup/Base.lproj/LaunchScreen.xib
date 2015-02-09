@@ -14,15 +14,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-gJ-lBt">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ChN-e0-ob0">
-                    <rect key="frame" x="47" y="178" width="226" height="47"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="ChN-e0-ob0" secondAttribute="centerX" id="RHK-gC-maG"/>
                 <constraint firstAttribute="trailing" secondItem="GPa-gJ-lBt" secondAttribute="trailing" id="bxN-4W-dH0"/>
-                <constraint firstItem="ChN-e0-ob0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="178" id="cyM-4H-R60"/>
                 <constraint firstItem="GPa-gJ-lBt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hwU-zz-vuf"/>
                 <constraint firstItem="GPa-gJ-lBt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rji-jd-q0n"/>
                 <constraint firstAttribute="bottom" secondItem="GPa-gJ-lBt" secondAttribute="bottom" id="toL-bG-NQr"/>
@@ -33,7 +28,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logo" width="226" height="47"/>
         <image name="waterBackground" width="320" height="569"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

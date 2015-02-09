@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var validationMessageWrapperView: UIView!
     @IBOutlet weak var validationMessageLabel: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     // Form Fields
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -24,7 +25,21 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     
+    var activeTextField: UITextField!
+    
     var delegate: RegisterViewControllerDelegate?
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.deregisterKeyboardNotifications()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,6 +146,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    
 }
 
 extension RegisterViewController: UITextFieldDelegate {
@@ -140,7 +156,51 @@ extension RegisterViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.activeTextField = nil
+    }
+    
+    func registerKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func deregisterKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification:NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            
+            if let textField = self.activeTextField {
+                let frame = textField.convertRect(textField.frame, toView: nil)
+                let origin = frame.origin
+                let height = textField.frame.size.height
+                
+                var visibleRect = self.view.frame
+                visibleRect.size.height -= keyboardSize.height
+                
+                if !CGRectContainsPoint(visibleRect, origin) {
+                    let scrollToPoint = CGPoint(x: 0.0, y: origin.y - visibleRect.size.height + height)
+                    scrollView.setContentOffset(scrollToPoint, animated: true)
+                }
+                
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        scrollView.setContentOffset(CGPointZero, animated: true)
+    }
 }
+
 
 protocol RegisterViewControllerDelegate {
     func registeredSuccessfully()

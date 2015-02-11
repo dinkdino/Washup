@@ -23,6 +23,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var submitButton: UIButton!
     
     var activeTextField: UITextField!
@@ -65,6 +66,7 @@ class RegisterViewController: UIViewController {
         
         // Form is valid
         
+        activityIndicator.startAnimating()
         var user = PFUser()
         user.username = self.emailTextField.text
         user.password = self.passwordTextField.text
@@ -86,6 +88,8 @@ class RegisterViewController: UIViewController {
                     self.showValidationErrorMessage("Could not create new account. Try Again.")
                 }
             }
+            
+            self.activityIndicator.stopAnimating()
         }
         
     }

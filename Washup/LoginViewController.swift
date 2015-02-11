@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var formWrapper: UIView!
     
     @IBOutlet weak var validationMessageWrapperView: UIView!
@@ -82,6 +83,7 @@ class LoginViewController: UIViewController {
             return
         }
         
+        activityIndicator.startAnimating()
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) { (user: PFUser!, error: NSError!) -> Void in
             
             if user != nil {
@@ -92,6 +94,8 @@ class LoginViewController: UIViewController {
                     self.showValidationErrorMessage("Incorrect email or password")
                 }
             }
+            
+            self.activityIndicator.stopAnimating()
         }
     }
     
